@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    home view
+  <div class="content">
+    Main
   </div>
 </template>
 
@@ -11,5 +11,5 @@ import { Options, Vue } from 'vue-class-component';
   components: {
   },
 })
-export default class HomeView extends Vue {}
+export default class Content extends Vue {}
 </script>
