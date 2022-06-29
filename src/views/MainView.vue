@@ -7,9 +7,9 @@
       <el-aside width="200px">
         <Aside />
       </el-aside>
-      <el-container>
+      <el-container class="container-main">
         <el-main>
-          <Content />
+          <router-view :key="Date.now()" />
         </el-main>
         <el-footer>
           <Footer />
@@ -17,8 +17,8 @@
       </el-container>
     </el-container>
   </el-container>
-  <!-- <router-link to="/about">About</router-link> -->
-  <router-view />
+  <router-link to="/">Home</router-link>
+  <router-link to="/document/1">About</router-link>
 </template>
 
 <script lang="ts">
@@ -26,16 +26,23 @@ import { Options, Vue } from "vue-class-component";
 import Header from "@/components/Header.vue"; // @ is an alias to /src
 import Aside from "@/components/Aside.vue"; // @ is an alias to /src
 import Footer from "@/components/Footer.vue"; // @ is an alias to /src
-import Content from "@/components/Content.vue";
-
 
 @Options({
   components: {
     Header,
     Aside,
     Footer,
-    Content,
   },
 })
 export default class MainView extends Vue {}
 </script>
+
+<style scoped>
+.container-main {
+  background-color: #eee;
+}
+.el-header {
+  display: flex;
+  align-items: center;
+}
+</style>
